@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.care.di.quiz2.OperatorClass" id="oper" />
+	<bean class="com.care.di.quiz2.PrintClass" id="print" />
+	<bean class="com.care.di.quiz2.SaveClass" id="save">
+		<property name="operatorClass" ref="oper" />
+		<property name="printClass" ref="print" />
+		<property name="data1" value="1" />
+		<property name="data2" value="3" />
+		<property name="oper" value="*" />
+	</bean>
+	
+</beans>

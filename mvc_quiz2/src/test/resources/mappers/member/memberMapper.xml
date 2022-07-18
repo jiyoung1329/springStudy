@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.care.db_quiz.repository.IMemberDAO">
+	<insert id="insert" parameterType="com.db.basic.dto.MemberDTO">
+		insert into db_quiz
+		values(#{id}, #{pwd1}, #{pwd2}, #{name}, #{addr}, #{tel})
+	</insert>
+
+	<select id="selectMember" parameterType="String"
+		resultType="com.db.basic.dto.MemberDTO">
+		select * from db_quiz where id=#{id}
+	</select>
+
+	<select id="selectAllMember"
+		resultType="com.db.basic.dto.MemberDTO">
+		select * from db_quiz
+	</select>
+
+	<update id="update">
+		update db_quiz set pwd1=#{pwd1}, pwd2=#{pwd2}, name=#{name},
+		addr=#{addr}, tel=#{tel} where id=#{id}
+	</update>
+
+	<delete id="delete">
+		delete from db_quiz where id=#{id}
+	</delete>
+</mapper>

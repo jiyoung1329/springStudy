@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.db.basic.repository.IAjaxDAO">
+	<insert id="insert" parameterType="com.db.basic.dto.AjaxDTO">
+		insert into exajax values(#{title}, #{artist}, #{price})
+	</insert>
+	<select id="titleAll" resultType="com.db.basic.dto.AjaxDTO">
+		select * from exajax
+	</select>
+	
+	<select id="titleSearch" parameterType="String" resultType="com.db.basic.dto.AjaxDTO">
+		select * from exajax where title like '%'||#{title}||'%' 
+	</select>
+	
+	<select id="artistSearch" parameterType="String" resultType="com.db.basic.dto.AjaxDTO">
+		select * from exajax where artist like '%'||#{artist}||'%'
+	</select>
+	
+	<select id="priceSearch" parameterType="String" resultType="com.db.basic.dto.AjaxDTO">
+		select * from exajax where price like '%'||#{price}||'%'
+	</select>
+	
+</mapper>
